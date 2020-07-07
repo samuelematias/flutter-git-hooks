@@ -76,8 +76,8 @@
 
 - `Commit`:
 
-  <img  alt="Trucko - Logo" src="https://i.imgur.com/wK5ThiE.png"/><br/>
+  <img  alt="pre-commit" src="https://i.imgur.com/MAJmZgP.png"/><br/>
 
 - `Push`:
 
-  <img  alt="Trucko - Logo" src="https://i.imgur.com/wMyG110.png"/><br/>
+  <img  alt="pre-push" src="https://i.imgur.com/2UvWl3Z.png"/><br/>
