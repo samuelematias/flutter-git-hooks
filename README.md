@@ -21,33 +21,49 @@
 
   ```bash
   #!/usr/bin/env bash
+
+  printf "\e[32;1m%s\e[0m\n" 'Pre-commit hook started'
+
+  #Flutter format
   printf "\e[33;1m%s\e[0m\n" 'Running the Flutter formatter'
   flutter format .
-  printf "\e[33;1m%s\e[0m\n" 'Finished running the Flutter formatter'
+  printf "\e[32;1m%s\e[0m\n" 'Finished running the Flutter formatter'
+
+  printf "\e[32;1m%s\e[0m\n" 'Pre-commit hook finished'
   ```
 
 - Inside `pre-push` file, put this:
 
   ```bash
   #!/usr/bin/env bash
+
+  #Check if exist some file(s) modified that have not been committed
   if [[ `git status --porcelain` ]]; then
-  printf "\e[31;1m%s\e[0m\n" 'This script needs to run against committed code only. Please commit or stash you changes.'
-  exit 1
+    printf "\e[31;1m%s\e[0m\n" 'This script needs to run against committed code only. Please commit or stash you changes.'
+    exit 1
   fi
+
+  printf "\e[32;1m%s\e[0m\n" 'Pre-push hook started'
+
+  #Flutter analyzer
   printf "\e[33;1m%s\e[0m\n" 'Running the Flutter analyzer'
   flutter analyze
   if [ $? -ne 0 ]; then
-  printf "\e[31;1m%s\e[0m\n" 'Flutter analyzer error'
-  exit 1
+    printf "\e[31;1m%s\e[0m\n" 'Flutter analyzer error'
+    exit 1
   fi
-  printf "\e[33;1m%s\e[0m\n" 'Finished running the Flutter analyzer'
+  printf "\e[32;1m%s\e[0m\n" 'Finished running the Flutter analyzer'
+
+  #Flutter test
   printf "\e[33;1m%s\e[0m\n" 'Running unit tests'
   flutter test
   if [ $? -ne 0 ]; then
-  printf "\e[31;1m%s\e[0m\n" 'Unit tests error'
-  exit 1
+    printf "\e[31;1m%s\e[0m\n" 'Unit tests error'
+    exit 1
   fi
-  printf "\e[33;1m%s\e[0m\n" 'Finished running unit tests'
+  printf "\e[32;1m%s\e[0m\n" 'Finished running unit tests'
+
+  printf "\e[32;1m%s\e[0m\n" 'Pre-push hook finished'
   ```
 
 - After this, now we need make the `pre-commit` and `pre-push` files executable:
