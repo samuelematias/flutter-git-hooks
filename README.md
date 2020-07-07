@@ -22,14 +22,14 @@
   ```bash
   #!/usr/bin/env bash
 
-  printf "\e[32;1m%s\e[0m\n" 'Pre-commit hook started'
+  printf "\e[36;1m%s\e[0m\n" 'Pre-commit hook started'
 
   #Flutter format
   printf "\e[33;1m%s\e[0m\n" 'Running the Flutter formatter'
   flutter format .
   printf "\e[32;1m%s\e[0m\n" 'Finished running the Flutter formatter'
 
-  printf "\e[32;1m%s\e[0m\n" 'Pre-commit hook finished'
+  printf "\e[36;1m%s\e[0m\n" 'Pre-commit hook finished'
   ```
 
 - Inside `pre-push` file, put this:
@@ -43,7 +43,7 @@
     exit 1
   fi
 
-  printf "\e[32;1m%s\e[0m\n" 'Pre-push hook started'
+  printf "\e[36;1m%s\e[0m\n" 'Pre-push hook started'
 
   #Flutter analyzer
   printf "\e[33;1m%s\e[0m\n" 'Running the Flutter analyzer'
@@ -63,7 +63,7 @@
   fi
   printf "\e[32;1m%s\e[0m\n" 'Finished running unit tests'
 
-  printf "\e[32;1m%s\e[0m\n" 'Pre-push hook finished'
+  printf "\e[36;1m%s\e[0m\n" 'Pre-push hook finished'
   ```
 
 - After this, now we need make the `pre-commit` and `pre-push` files executable:

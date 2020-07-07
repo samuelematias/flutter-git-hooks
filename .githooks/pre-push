@@ -6,7 +6,7 @@ if [[ `git status --porcelain` ]]; then
   exit 1
 fi
 
-printf "\e[32;1m%s\e[0m\n" 'Pre-push hook started'
+printf "\e[36;1m%s\e[0m\n" 'Pre-push hook started'
 
 #Flutter analyzer
 printf "\e[33;1m%s\e[0m\n" 'Running the Flutter analyzer'
@@ -26,4 +26,4 @@ if [ $? -ne 0 ]; then
 fi
 printf "\e[32;1m%s\e[0m\n" 'Finished running unit tests'
 
-printf "\e[32;1m%s\e[0m\n" 'Pre-push hook finished'
+printf "\e[36;1m%s\e[0m\n" 'Pre-push hook finished'
