@@ -5,7 +5,7 @@
 
 ## Steps
 
-- Create `.githooks/` folder.
+- Create `.githooks/` folder in the source root.
 
 - Change the hooks folder to be .githooks, run:
 
@@ -14,6 +14,8 @@
   ```
 
 - Create the `pre-commit` and `pre-push` file without format inside `.githooks` folder.
+
+  <img  alt="Trucko - Logo" src="https://i.imgur.com/vDEzMlA.png"/><br/>
 
 - Inside `pre-commit` file, put this:
 
@@ -57,7 +59,9 @@
 - `Now` if you `commit` or `push` some code, will `run/execute` this `hooks`:
 
 - `Commit`:
+
   <img  alt="Trucko - Logo" src="https://i.imgur.com/wK5ThiE.png"/><br/>
 
 - `Push`:
+
   <img  alt="Trucko - Logo" src="https://i.imgur.com/wMyG110.png"/><br/>
