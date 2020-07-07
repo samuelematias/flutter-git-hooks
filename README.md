@@ -53,7 +53,7 @@
 - After this, now we need make the `pre-commit` and `pre-push` files executable:
 
   ```bash
-  cd .githooks && chmod +x pre-commit && chmod +x pre-push && cd ...
+  cd .githooks && chmod +x pre-commit && chmod +x pre-push && cd ..
   ```
 
 - `Now` if you `commit` or `push` some code, will `run/execute` this `hooks`:
